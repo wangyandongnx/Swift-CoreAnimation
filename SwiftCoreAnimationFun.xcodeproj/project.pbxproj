@@ -1,0 +1,424 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4C15DA12194ACA3F00DBFB1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15DA11194ACA3F00DBFB1F /* AppDelegate.swift */; };
+		4C15DA14194ACA3F00DBFB1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15DA13194ACA3F00DBFB1F /* ViewController.swift */; };
+		4C15DA17194ACA3F00DBFB1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C15DA15194ACA3F00DBFB1F /* Main.storyboard */; };
+		4C15DA19194ACA3F00DBFB1F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C15DA18194ACA3F00DBFB1F /* Images.xcassets */; };
+		4C15DA25194ACA4000DBFB1F /* SwiftCoreAnimationFunTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15DA24194ACA4000DBFB1F /* SwiftCoreAnimationFunTests.swift */; };
+		4C15DA30194ACA5000DBFB1F /* CAAnimation+Closures.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15DA2E194ACA5000DBFB1F /* CAAnimation+Closures.swift */; };
+		4C15DA31194ACA5000DBFB1F /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C15DA2F194ACA5000DBFB1F /* AnimationView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C15DA1F194ACA4000DBFB1F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C15DA04194ACA3F00DBFB1F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C15DA0B194ACA3F00DBFB1F;
+			remoteInfo = SwiftCoreAnimationFun;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4C15DA0C194ACA3F00DBFB1F /* SwiftCoreAnimationFun.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftCoreAnimationFun.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C15DA10194ACA3F00DBFB1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C15DA11194ACA3F00DBFB1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4C15DA13194ACA3F00DBFB1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C15DA16194ACA3F00DBFB1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4C15DA18194ACA3F00DBFB1F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		4C15DA1E194ACA4000DBFB1F /* SwiftCoreAnimationFunTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SwiftCoreAnimationFunTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C15DA23194ACA4000DBFB1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C15DA24194ACA4000DBFB1F /* SwiftCoreAnimationFunTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftCoreAnimationFunTests.swift; sourceTree = "<group>"; };
+		4C15DA2E194ACA5000DBFB1F /* CAAnimation+Closures.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CAAnimation+Closures.swift"; sourceTree = "<group>"; };
+		4C15DA2F194ACA5000DBFB1F /* AnimationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4C15DA09194ACA3F00DBFB1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C15DA1B194ACA4000DBFB1F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4C15DA03194ACA3F00DBFB1F = {
+			isa = PBXGroup;
+			children = (
+				4C15DA0E194ACA3F00DBFB1F /* SwiftCoreAnimationFun */,
+				4C15DA21194ACA4000DBFB1F /* SwiftCoreAnimationFunTests */,
+				4C15DA0D194ACA3F00DBFB1F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4C15DA0D194ACA3F00DBFB1F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4C15DA0C194ACA3F00DBFB1F /* SwiftCoreAnimationFun.app */,
+				4C15DA1E194ACA4000DBFB1F /* SwiftCoreAnimationFunTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4C15DA0E194ACA3F00DBFB1F /* SwiftCoreAnimationFun */ = {
+			isa = PBXGroup;
+			children = (
+				4C15DA2E194ACA5000DBFB1F /* CAAnimation+Closures.swift */,
+				4C15DA2F194ACA5000DBFB1F /* AnimationView.swift */,
+				4C15DA11194ACA3F00DBFB1F /* AppDelegate.swift */,
+				4C15DA13194ACA3F00DBFB1F /* ViewController.swift */,
+				4C15DA15194ACA3F00DBFB1F /* Main.storyboard */,
+				4C15DA18194ACA3F00DBFB1F /* Images.xcassets */,
+				4C15DA0F194ACA3F00DBFB1F /* Supporting Files */,
+			);
+			path = SwiftCoreAnimationFun;
+			sourceTree = "<group>";
+		};
+		4C15DA0F194ACA3F00DBFB1F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C15DA10194ACA3F00DBFB1F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4C15DA21194ACA4000DBFB1F /* SwiftCoreAnimationFunTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C15DA24194ACA4000DBFB1F /* SwiftCoreAnimationFunTests.swift */,
+				4C15DA22194ACA4000DBFB1F /* Supporting Files */,
+			);
+			path = SwiftCoreAnimationFunTests;
+			sourceTree = "<group>";
+		};
+		4C15DA22194ACA4000DBFB1F /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4C15DA23194ACA4000DBFB1F /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4C15DA0B194ACA3F00DBFB1F /* SwiftCoreAnimationFun */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C15DA28194ACA4000DBFB1F /* Build configuration list for PBXNativeTarget "SwiftCoreAnimationFun" */;
+			buildPhases = (
+				4C15DA08194ACA3F00DBFB1F /* Sources */,
+				4C15DA09194ACA3F00DBFB1F /* Frameworks */,
+				4C15DA0A194ACA3F00DBFB1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftCoreAnimationFun;
+			productName = SwiftCoreAnimationFun;
+			productReference = 4C15DA0C194ACA3F00DBFB1F /* SwiftCoreAnimationFun.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4C15DA1D194ACA4000DBFB1F /* SwiftCoreAnimationFunTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C15DA2B194ACA4000DBFB1F /* Build configuration list for PBXNativeTarget "SwiftCoreAnimationFunTests" */;
+			buildPhases = (
+				4C15DA1A194ACA4000DBFB1F /* Sources */,
+				4C15DA1B194ACA4000DBFB1F /* Frameworks */,
+				4C15DA1C194ACA4000DBFB1F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C15DA20194ACA4000DBFB1F /* PBXTargetDependency */,
+			);
+			name = SwiftCoreAnimationFunTests;
+			productName = SwiftCoreAnimationFunTests;
+			productReference = 4C15DA1E194ACA4000DBFB1F /* SwiftCoreAnimationFunTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4C15DA04194ACA3F00DBFB1F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0600;
+				ORGANIZATIONNAME = "Wang Yandong";
+				TargetAttributes = {
+					4C15DA0B194ACA3F00DBFB1F = {
+						CreatedOnToolsVersion = 6.0;
+					};
+					4C15DA1D194ACA4000DBFB1F = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = 4C15DA0B194ACA3F00DBFB1F;
+					};
+				};
+			};
+			buildConfigurationList = 4C15DA07194ACA3F00DBFB1F /* Build configuration list for PBXProject "SwiftCoreAnimationFun" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4C15DA03194ACA3F00DBFB1F;
+			productRefGroup = 4C15DA0D194ACA3F00DBFB1F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4C15DA0B194ACA3F00DBFB1F /* SwiftCoreAnimationFun */,
+				4C15DA1D194ACA4000DBFB1F /* SwiftCoreAnimationFunTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4C15DA0A194ACA3F00DBFB1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C15DA17194ACA3F00DBFB1F /* Main.storyboard in Resources */,
+				4C15DA19194ACA3F00DBFB1F /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C15DA1C194ACA4000DBFB1F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4C15DA08194ACA3F00DBFB1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C15DA30194ACA5000DBFB1F /* CAAnimation+Closures.swift in Sources */,
+				4C15DA14194ACA3F00DBFB1F /* ViewController.swift in Sources */,
+				4C15DA12194ACA3F00DBFB1F /* AppDelegate.swift in Sources */,
+				4C15DA31194ACA5000DBFB1F /* AnimationView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4C15DA1A194ACA4000DBFB1F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C15DA25194ACA4000DBFB1F /* SwiftCoreAnimationFunTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4C15DA20194ACA4000DBFB1F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C15DA0B194ACA3F00DBFB1F /* SwiftCoreAnimationFun */;
+			targetProxy = 4C15DA1F194ACA4000DBFB1F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4C15DA15194ACA3F00DBFB1F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4C15DA16194ACA3F00DBFB1F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4C15DA26194ACA4000DBFB1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4C15DA27194ACA4000DBFB1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				METAL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4C15DA29194ACA4000DBFB1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = SwiftCoreAnimationFun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4C15DA2A194ACA4000DBFB1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				INFOPLIST_FILE = SwiftCoreAnimationFun/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4C15DA2C194ACA4000DBFB1F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SwiftCoreAnimationFun.app/SwiftCoreAnimationFun";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiftCoreAnimationFunTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Debug;
+		};
+		4C15DA2D194ACA4000DBFB1F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SwiftCoreAnimationFun.app/SwiftCoreAnimationFun";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = SwiftCoreAnimationFunTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				METAL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4C15DA07194ACA3F00DBFB1F /* Build configuration list for PBXProject "SwiftCoreAnimationFun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C15DA26194ACA4000DBFB1F /* Debug */,
+				4C15DA27194ACA4000DBFB1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C15DA28194ACA4000DBFB1F /* Build configuration list for PBXNativeTarget "SwiftCoreAnimationFun" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C15DA29194ACA4000DBFB1F /* Debug */,
+				4C15DA2A194ACA4000DBFB1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4C15DA2B194ACA4000DBFB1F /* Build configuration list for PBXNativeTarget "SwiftCoreAnimationFunTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C15DA2C194ACA4000DBFB1F /* Debug */,
+				4C15DA2D194ACA4000DBFB1F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4C15DA04194ACA3F00DBFB1F /* Project object */;
+}
