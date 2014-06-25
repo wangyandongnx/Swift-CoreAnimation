@@ -221,8 +221,8 @@ class AnimationView: UIView {
             (from: CGPointMake(delta, d), to: CGPointMake(delta, 0)),
             (from: CGPointMake(d - delta, 0), to: CGPointMake(d - delta, d)),
             (from: CGPointMake(d - delta, d), to: CGPointMake(d - delta, 0)),
-            (from: CGPointMake(0, d - delta), to: CGPointMake(d - delta, d - delta)),
-            (from: CGPointMake(d - delta, d - delta), to: CGPointMake(0, d - delta)),
+            (from: CGPointMake(0, d - delta), to: CGPointMake(d, d - delta)),
+            (from: CGPointMake(d, d - delta), to: CGPointMake(0, d - delta)),
         ]
         
         var elements = strokeAnimationElements(lines, strokeEnd: 0.5)
