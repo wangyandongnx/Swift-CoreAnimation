@@ -17,13 +17,13 @@ class AnimationView: UIView {
     let guideLineColor = UIColor.lightGrayColor()
     let animationDurations = [0.4, 0.4, 0.6, 0.6, 0.8]
     
-    init(frame: CGRect) {
+    override init(frame: CGRect) {
         super.init(frame: frame)
         
         setup()
     }
     
-    init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder!) {
         super.init(coder: aDecoder)
         
         setup()
@@ -52,10 +52,11 @@ class AnimationView: UIView {
     
     func prepareAnimation() {
         if baseLayer.sublayers {
-            baseLayer.sublayers.bridgeToObjectiveC().makeObjectsPerformSelector(Selector("removeAllAnimations"))
-            baseLayer.sublayers.bridgeToObjectiveC().makeObjectsPerformSelector(Selector("removeFromSuperlayer"))
+            for subLayer in baseLayer.sublayers {
+                subLayer.removeAllAnimations()
+            }
+            baseLayer.sublayers = nil
         }
-//        baseLayer.sublayers = nil
         baseLayer.removeAllAnimations()
     }
     
@@ -270,76 +271,4 @@ class AnimationView: UIView {
         }
         CATransaction.commit()
     }
-}
-
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////////////////////////////////////////////////
-
-// !!! Due to bugs of Xcode Version 6.0 (6A215l), I have to put extension here.
-// !!! Or it will crash the compiler.
-
-class CAAnimationDelagate: NSObject {
-    
-    var didStar: ((CAAnimation!) -> Void)?
-    var didStop: ((CAAnimation!, Bool) -> Void)?
-    
-    override func animationDidStart(anim: CAAnimation!) {
-        if didStar {
-            didStar!(anim)
-        }
-    }
-    
-    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
-        if didStop {
-            didStop!(anim, flag)
-        }
-    }
-    
-}
-
-extension CAAnimation {
-    
-    var didStart: ((CAAnimation!) -> Void)? {
-    get {
-        if let delegate = self.delegate as? CAAnimationDelagate {
-            return delegate.didStar
-        }
-        
-        return nil
-    }
-    set {
-        if let delegate = self.delegate as? CAAnimationDelagate {
-            delegate.didStar = newValue
-        }
-        else
-        {
-            var delegate = CAAnimationDelagate()
-            delegate.didStar = newValue
-            self.delegate = delegate
-        }
-    }
-    }
-    
-    var didStop: ((CAAnimation!, Bool) -> Void)? {
-    get {
-        if let delegate = self.delegate as? CAAnimationDelagate {
-            return delegate.didStop
-        }
-        
-        return nil
-    }
-    set {
-        if let delegate = self.delegate as? CAAnimationDelagate {
-            delegate.didStop = newValue
-        }
-        else
-        {
-            var delegate = CAAnimationDelagate()
-            delegate.didStop = newValue
-            self.delegate = delegate
-        }
-    }
-    }
-    
 }

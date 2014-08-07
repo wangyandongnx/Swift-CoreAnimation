@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
                             
-    @IBOutlet var animationView : AnimationView
+    @IBOutlet var animationView : AnimationView?
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -24,10 +24,7 @@ class ViewController: UIViewController {
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         
-        animationView.playAnimation()
-        
-        println(animationView)
-        println(self.view)
+        animationView!.playAnimation()
     }
 }
 
