@@ -23,7 +23,7 @@ class AnimationView: UIView {
         setup()
     }
     
-    required init(coder aDecoder: NSCoder!) {
+    required init(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         setup()
@@ -51,7 +51,7 @@ class AnimationView: UIView {
     }
     
     func prepareAnimation() {
-        if baseLayer.sublayers {
+        if nil != baseLayer.sublayers {
             for subLayer in baseLayer.sublayers {
                 subLayer.removeAllAnimations()
             }
@@ -99,7 +99,7 @@ class AnimationView: UIView {
             layer.fillColor = UIColor.clearColor().CGColor
             layer.strokeColor = guideLineColor.CGColor
             layer.lineWidth = 1
-            layer.lineCap = kCALineCapRound
+            layer.lineCap = kCALineCapRound.substringFromIndex(0)
             layer.opacity = 0
             layer.path = UIBezierPath(arcCenter: circle.center, radius: 0.001, startAngle: 0, endAngle: CGFloat(M_PI) * 2, clockwise: true).CGPath
             
@@ -112,7 +112,7 @@ class AnimationView: UIView {
             var animation = CAAnimationGroup()
             animation.animations = [pathAnimation, opacityAnimation]
             animation.removedOnCompletion = false
-            animation.fillMode = kCAFillModeForwards
+            animation.fillMode = kCAFillModeForwards.substringFromIndex(0)
             
             elements.append((layer, animation) as (CALayer, CAAnimation))
         }
@@ -129,7 +129,7 @@ class AnimationView: UIView {
             layer.fillColor = UIColor.clearColor().CGColor
             layer.strokeColor = guideLineColor.CGColor
             layer.lineWidth = 1
-            layer.lineCap = kCALineCapRound
+            layer.lineCap = kCALineCapRound.substringFromIndex(0)
             layer.opacity = 0
             
             var path = UIBezierPath()
@@ -147,7 +147,7 @@ class AnimationView: UIView {
             var animation = CAAnimationGroup()
             animation.animations = [strokeAnimation, opacityAnimation]
             animation.removedOnCompletion = false
-            animation.fillMode = kCAFillModeForwards
+            animation.fillMode = kCAFillModeForwards.substringFromIndex(0)
             
             elements.append((layer, animation) as (CALayer, CAAnimation))
         }
@@ -158,7 +158,7 @@ class AnimationView: UIView {
     func applyAnimation(elements: Array<(CALayer, CAAnimation)>!, duration: CFTimeInterval, completion: (() -> Void)?) {
         CATransaction.begin()
         CATransaction.setAnimationDuration(duration)
-        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut))
+        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut.substringFromIndex(0)))
         CATransaction.setCompletionBlock(completion)
         for (layer, animation) in elements {
             layer.addAnimation(animation, forKey: "animation")
@@ -170,9 +170,9 @@ class AnimationView: UIView {
         var cornerRadiusAnimation = CABasicAnimation(keyPath: "cornerRadius")
         cornerRadiusAnimation.toValue = baseCornerRadius
         cornerRadiusAnimation.duration = animationDurations[0]
-        cornerRadiusAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+        cornerRadiusAnimation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut.substringFromIndex(0))
         cornerRadiusAnimation.removedOnCompletion = false
-        cornerRadiusAnimation.fillMode = kCAFillModeForwards
+        cornerRadiusAnimation.fillMode = kCAFillModeForwards.substringFromIndex(0)
         cornerRadiusAnimation.didStop = didStop
         baseLayer.addAnimation(cornerRadiusAnimation, forKey: "cornerRadiusAnimation")
     }
@@ -255,7 +255,7 @@ class AnimationView: UIView {
         
         CATransaction.begin()
         CATransaction.setAnimationDuration(animationDurations[4])
-        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut))
+        CATransaction.setAnimationTimingFunction(CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut.substringFromIndex(0)))
         CATransaction.setCompletionBlock({ [weak self] () -> Void in
             var delay = dispatch_time(DISPATCH_TIME_NOW, Int64(0.8 * Double(NSEC_PER_SEC)))
             dispatch_after(delay, dispatch_get_main_queue(), {
@@ -271,4 +271,72 @@ class AnimationView: UIView {
         }
         CATransaction.commit()
     }
+}
+
+// MARK: CAAnimation+Closures
+
+// NOTE: Due to bug of Xcode 6 Beta, I have to put the extension here. Or it will crash the compiler.
+//       This bug was found in Xcode 6 Beta 1 and was fixed in Xcode 6 Beta 5. But it happends again in Xcode 6 Beta 6.
+
+class CAAnimationDelagate: NSObject {
+    
+    var didStar: ((CAAnimation!) -> Void)?
+    var didStop: ((CAAnimation!, Bool) -> Void)?
+    
+    override func animationDidStart(anim: CAAnimation!) {
+        if (nil != didStar) {
+            didStar!(anim)
+        }
+    }
+    
+    override func animationDidStop(anim: CAAnimation!, finished flag: Bool) {
+        if (nil != didStop) {
+            didStop!(anim, flag)
+        }
+    }
+    
+}
+
+extension CAAnimation {
+    
+    var didStart: ((CAAnimation!) -> Void)? {
+        get {
+            if let delegate = self.delegate as? CAAnimationDelagate {
+                return delegate.didStar
+            }
+            
+            return nil
+        }
+        
+        set {
+            if let delegate = self.delegate as? CAAnimationDelagate {
+                delegate.didStar = newValue
+            } else {
+                var delegate = CAAnimationDelagate()
+                delegate.didStar = newValue
+                self.delegate = delegate
+            }
+        }
+    }
+    
+    var didStop: ((CAAnimation!, Bool) -> Void)? {
+        get {
+            if let delegate = self.delegate as? CAAnimationDelagate {
+                return delegate.didStop
+            }
+            
+            return nil
+        }
+        
+        set {
+            if let delegate = self.delegate as? CAAnimationDelagate {
+                delegate.didStop = newValue
+            } else {
+                var delegate = CAAnimationDelagate()
+                delegate.didStop = newValue
+                self.delegate = delegate
+            }
+        }
+    }
+
 }
